@@ -21,6 +21,12 @@ const Quote = () => {
   useEffect(() => {
     fetchData();
     setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      fetchData();
+    }, 60000);
 
     setIntervalId(
       setInterval(() => {
@@ -30,7 +36,7 @@ const Quote = () => {
   }, []);
 
   return (
-    <div>
+    <div className="elements">
       {loading ? (
         <div className="loading">...Loading</div>
       ) : (

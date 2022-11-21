@@ -14,11 +14,25 @@ body {
   box-shadow: 20px 20px 15px rgba(7, 7, 7, 0.2);
 }
 
-.mobile {
-  text-align: center;
+@media screen and (min-width: 900px) {
+  .main {
+    max-width: 40%;
+  }
 }
 
-.desktop {
+@media screen and (min-width: 374px) {
+  .main {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .main {
+    padding-bottom: 60px;
+  }
+}
+
+.mobile {
   text-align: center;
 }
 
@@ -26,27 +40,15 @@ body {
   .mobile {
     display: none;
   }
-
-  .main {
-    width: 50%;
-  }
 }
 
-@media screen and (min-width: 375px) {
-  .main {
-    width: 80%;
-  }
+.desktop {
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
   .desktop {
     display: none;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .main {
-    padding-bottom: 60px;
   }
 }
 
@@ -69,14 +71,23 @@ body {
   font-size: 20px;
 }
 
+.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .button {
+  justify-content: center;
+  width: 100%;
+  margin: auto;
   color: var(--DarkBlue);
   background-color: var(--NeonGreen);
   width: 60px;
   height: 60px;
   position: absolute;
-  left: 44%;
-  margin: 0;
+  margin: auto;
   border-radius: 100px;
   border: none;
   transition: ease-in-out 0.4s;
@@ -84,6 +95,26 @@ body {
 
 .button:hover {
   box-shadow: 0 0 15px var(--NeonGreen);
+}
+
+@media screen and (max-width: 1800px) {
+  .button {
+    bottom: 42%;
+    translate: 140px;
+  }
+}
+
+@media screen and (min-width: 374px) {
+  .button {
+    left: 40%;
+    transform: translateY(65px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    translate: 10px -61px;
+  }
 }
 
 .svg {
