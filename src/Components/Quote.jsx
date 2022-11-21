@@ -27,7 +27,6 @@ const Quote = () => {
         fetchData();
       }, 60000)
     );
-    clearInterval(intervalId);
   }, []);
 
   return (
