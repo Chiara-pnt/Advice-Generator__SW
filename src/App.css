@@ -5,7 +5,6 @@ body {
 
 .main {
   background-color: var(--DarkGrayishBlue);
-  width: 85%;
   height: 330px;
   margin: 70px auto;
   border-radius: 10px;
@@ -23,24 +22,29 @@ body {
   text-align: center;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 900px) {
   .mobile {
     display: none;
   }
+
   .main {
-    width: 550px;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .main {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .desktop {
+    display: none;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .desktop {
-    display: none;
-  }
-
-  .button {
-    margin-top: 20px;
-  }
-
   .main {
     padding-bottom: 60px;
   }
@@ -71,9 +75,7 @@ body {
   width: 60px;
   height: 60px;
   position: absolute;
-  left: 50%;
-  bottom: 35%;
-  transform: translateX(-50%);
+  left: 44%;
   margin: 0;
   border-radius: 100px;
   border: none;
@@ -93,6 +95,7 @@ body {
   padding: 25px 0px 30px 0;
   margin-top: 0;
   padding-bottom: 30px;
+  margin: 0 auto;
 }
 
 .loading {
