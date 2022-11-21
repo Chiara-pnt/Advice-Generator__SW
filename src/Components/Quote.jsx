@@ -28,7 +28,7 @@ const Quote = () => {
       }, 60000)
     );
     clearInterval(intervalId);
-  }, [intervalId]);
+  }, []);
 
   return (
     <div>
