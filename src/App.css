@@ -93,7 +93,8 @@ body {
   height: 60px;
   border-radius: 100px;
   border: none;
-  transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
 }
 
 .button:hover {
