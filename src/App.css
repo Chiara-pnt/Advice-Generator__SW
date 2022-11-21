@@ -1,0 +1,102 @@
+body {
+  background-color: var(--DarkBlue);
+  color: var(--LightCyan);
+}
+
+.main {
+  background-color: var(--DarkGrayishBlue);
+  width: 85%;
+  height: 330px;
+  margin: 70px auto;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 10px 64px 10px;
+  box-shadow: 20px 20px 15px rgba(7, 7, 7, 0.2);
+}
+
+.mobile {
+  text-align: center;
+}
+
+.desktop {
+  text-align: center;
+}
+
+@media screen and (min-width: 570px) {
+  .mobile {
+    display: none;
+  }
+  .main {
+    width: 550px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .desktop {
+    display: none;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+
+  .main {
+    padding-bottom: 60px;
+  }
+}
+
+.header {
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--NeonGreen);
+  padding: 20px 0;
+}
+
+.quote {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 40px 0;
+  width: 70%;
+  height: 150px;
+  font-size: 20px;
+}
+
+.button {
+  color: var(--DarkBlue);
+  background-color: var(--NeonGreen);
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: 35%;
+  transform: translateX(-50%);
+  margin: 0;
+  border-radius: 100px;
+  border: none;
+  transition: ease-in-out 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 0 15px var(--NeonGreen);
+}
+
+.svg {
+  display: flex;
+  margin: auto;
+}
+
+.pattern {
+  padding: 25px 0px 30px 0;
+  margin-top: 0;
+  padding-bottom: 30px;
+}
+
+.loading {
+  text-align: center;
+  margin: 120px auto;
+  height: 50px;
+}
