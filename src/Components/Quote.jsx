@@ -9,25 +9,23 @@ const APIURL = "https://api.adviceslip.com/advice";
 const Quote = () => {
   const [advice, setAdvice] = useState({});
   const [intervalId, setIntervalId] = useState();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
-    const response = await fetch(APIURL);
-    const data = await response.json();
-
-    setAdvice(data.slip);
+    setLoading(true);
+    try {
+      const response = await fetch(APIURL); // no cache -> fetching before the 2s limit of api
+      const data = await response.json();
+      setAdvice(data.slip);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchData();
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      fetchData();
-    }, 60000);
-
     setIntervalId(
       setInterval(() => {
         fetchData();
@@ -37,16 +35,15 @@ const Quote = () => {
 
   return (
     <div className="elements">
-      {loading ? (
-        <div className="loading">...Loading</div>
-      ) : (
-        <>
-          <Header advice={advice} loading={loading} />
-          <div className="quote">{loading ? "...Loading" : advice.advice}</div>
-        </>
-      )}
+      <Header advice={advice} loading={loading} />
+      <div className="quote">{advice.advice}</div>
       <Patterns />
-      <ButtonDice fetchData={fetchData} intervalId={intervalId} />
+      <ButtonDice
+        fetchData={fetchData}
+        intervalId={intervalId}
+        setIntervalId={setIntervalId}
+        loading={loading}
+      />
     </div>
   );
 };
